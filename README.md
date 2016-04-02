@@ -1,6 +1,8 @@
 # TopdownComponent
 Top-down Component for 2D games in Unity
 
+![alt tag](images/github_tdcomponent01.gif?raw=true "Title")
+
 The Top-downComponent uses a transformation matrix to simulate a 3D position into a 2D world. Notes that it's still experimental.
 
 **TopdownComponent**
