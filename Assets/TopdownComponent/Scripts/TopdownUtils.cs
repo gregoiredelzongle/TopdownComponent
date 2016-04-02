@@ -7,11 +7,14 @@ namespace Headache.TopdownComponent
     public static class TopdownUtils
     {
 
-        // Fake Topdown angle
+        // Angle of the TopDown view in degrees
         public static float angle = 30;
         public static float AngleRatio { get { return angle / 90; } }
 
-        // Return Topdown Matrix to convert 2.5d to world space
+        /// <summary>
+        /// Return the Topdown transformation matrix
+        /// </summary>
+        /// <returns></returns>
         public static Matrix4x4 TopDownMatrix()
         {
             Matrix4x4 matrix = new Matrix4x4();
@@ -27,19 +30,33 @@ namespace Headache.TopdownComponent
 
             return matrix;
         }
-        // Convert World point into Topdown point
+
+        /// <summary>
+        /// Convert World space point (2D) into Topdown space point (3D)
+        /// </summary>
+        /// <param name="worldPos">world position of the object</param>
+        /// <param name="height">facultative height of the object (default 0)</param>
+        /// <returns></returns>
         public static Vector3 WorldToTdPosition(Vector3 worldPos, float height = 0)
         {
             return new Vector3(worldPos.x, height, worldPos.y);
         }
 
-        // Convert topDown point into world point
+        /// <summary>
+        /// Convert Topdown space point (2D) into world space point (3D)
+        /// </summary>
+        /// <param name="tdPos">3D position of the object</param>
+        /// <returns></returns>
         public static Vector3 TdToWorldPosition(Vector3 tdPos)
         {
             return TopDownMatrix().MultiplyPoint(tdPos);
         }
 
-        // Average center of multiple points in space
+        /// <summary>
+        /// Get average center of multiple vectors
+        /// </summary>
+        /// <param name="vectors"></param>
+        /// <returns></returns>
         public static Vector3 VectorsCenter(Vector3[] vectors)
         {
             Vector3 sum = Vector3.zero;

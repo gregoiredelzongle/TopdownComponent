@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Headache.TopdownComponent;
 
 namespace Headache.TopdownComponent
 {
-    // Use this script if you need to sort a renderer (ex sprite) based on fake 2.5d space
-
+    /// <summary>
+    /// Drag this script into any GameObject with a renderer (ex a sprite renderer) and a TopdownTransform to link the sorting order and the y axis of the TopdownTransform. Optionally you can 
+    /// drag a TopdownTransform if the GameObject doesn't have any.
+    /// </summary>
     [ExecuteInEditMode]
     [RequireComponent(typeof(Renderer))]
     public class TopdownDynamicLayerSorting : MonoBehaviour

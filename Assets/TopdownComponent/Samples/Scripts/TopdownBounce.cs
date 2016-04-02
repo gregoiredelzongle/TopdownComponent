@@ -6,7 +6,6 @@ public class TopdownBounce : MonoBehaviour {
 
     public Vector3 direction;
     public float maxHeight = 1.0f;
-    public int amountOfBounces = 3;
     public float bounceSpeed = 1.0f;
 
     private Vector3 velocity;
@@ -21,11 +20,6 @@ public class TopdownBounce : MonoBehaviour {
     void Start()
     {
         StartCoroutine("StartBounce");
-    }
-
-    void Update()
-    {
-
     }
 
     IEnumerator StartBounce()
@@ -45,14 +39,4 @@ public class TopdownBounce : MonoBehaviour {
     return Mathf.Sin(Mathf.Clamp01(t) * Mathf.PI);
 }
 
-    /*// Update is called once per frame
-    void FixedUpdate () {
-
-            velocity += Physics.gravity ;
-            velocity += Vector3.up * Mathf.Sin(Time.time)*10;
-
-            tdTransform.position += velocity * Time.fixedDeltaTime;
-            
-
-	}*/
 }
