@@ -16,3 +16,5 @@ Drag this component into any GameObject with a Renderer and a TopdownComponent t
 
 Check the scene in the Samples folder for more informations
 
+Art by Kenney (http://kenney.nl/)
+
